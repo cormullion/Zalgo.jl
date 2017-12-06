@@ -1,5 +1,6 @@
 using Zalgo
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+s = "Julia is really cool"
+
+@test length(zalgoize(s)) > length(s)

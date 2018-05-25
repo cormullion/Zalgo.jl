@@ -1,7 +1,7 @@
 # Zalgo
 
 ```
-zalgoize("Julia is really cool", maxmarks=10)
+zalgo("Julia is really cool", maxmarks=10)
 
 J̘̖͝u̖ͫ́l͈̗͒̄į̟̝̇̕͢a͉͖̒ͮ̄͒͜͜ i̬̎̉̂s̲ͣ̂͊͡ r̼͌e̥̊̔ͦ͘a̢͙ͧ̇͝l̢̹̼̑̒͗͞l͌͜y̺͔̓̊ͧ̍ c̻̣͕ͨͬǫ̜ͦͥͬo̝ͦ̈̀l̮̹͍̼̏
 ```

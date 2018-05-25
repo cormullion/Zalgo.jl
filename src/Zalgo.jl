@@ -9,7 +9,7 @@ const middledc = vcat('\u031B', '\u0334':'\u0338')
 const downdc = vcat('\u0316':'\u0319', '\u031C':'\u0333', '\u0339':'\u033C', '\u0347':'\u0349', '\u034D':'\u034E', '\u0353':'\u0356', '\u0359', '\u035A', '\u035C', '\u035F','\u0362')
 
 function adddc(letter, dc)
-    return letter * dc[rand(1:end)]
+    return string(letter) * string(dc[rand(1:end)])
 end
 
 """

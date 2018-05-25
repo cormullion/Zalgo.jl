@@ -36,7 +36,7 @@ function zalgo(text::String;
     zalgostring = String[]
     for letter in letters
         # can't add a diacritic mark to some letters
-        if VERSION >= v"0.7.0"
+        if VERSION >= v"0.7.0-"
             if !all(isletter, letter)
                 push!(zalgostring, letter)
                 continue

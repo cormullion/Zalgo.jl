@@ -59,16 +59,9 @@ function zalgo(text::String;
     zalgostring = String[]
     for letter in letters
         # can't add a diacritic mark to some letters
-        if VERSION >= v"0.7.0-"
-            if !all(isletter, letter)
-                push!(zalgostring, letter)
-                continue
-            end
-        else
-            if !all(isalpha, letter)
-                push!(zalgostring, letter)
-                continue
-            end
+        if !all(isletter, letter)
+            push!(zalgostring, letter)
+            continue
         end
         upmarks_added     = rand(upmarks.start:upmarks.stop)
         downmarks_added   = rand(downmarks.start:downmarks.stop)

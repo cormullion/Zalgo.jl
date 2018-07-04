@@ -33,7 +33,7 @@ frakturdict = Dict{String, Char}()
 [frakturdict[string(Char(i + 64))] = vcat('\U1D56C':'\U1D585')[i] for i = 1:26]
 [frakturdict[string(Char(i + 96))] = vcat('\U1D586':'\U1D59F')[i] for i = 1:26]
 
-# building Script dict
+# build the Script dict
 scriptdict = Dict{String, Char}()
 [scriptdict[string(Char(i + 64))] = vcat('\U1D49C':'\U1D4B5')[i] for i = 1:26]
 [scriptdict[string(Char(i + 96))] = vcat('\U1D4EA':'\U1D503')[i] for i = 1:26]
@@ -46,9 +46,9 @@ end
     zalgo(str::String, upmarks = 1:4, middlemarks = 1:4,
         downmarks = 1:4, maxmarks = 6)
 
-Add diacritic marks to `str`. `maxmarks` sets the maximum number of
-diacritic marks to added to each letter. The `upmarks` range sets the
-minimum and maximum number of diacritic marks added above the letter.
+Randomly add up to `maxmarks` diacritic marks to each letter of `str`. The `upmarks`,
+`middlemarks`, and `downmarks` ranges determine the minimum and maximum number of
+diacritic marks added to the letter at that position.
 """
 function zalgo(text::String;
         upmarks = 1:4,
@@ -91,16 +91,31 @@ function zalgo(text::String;
     return join(zalgostring)
 end
 
+"""
+    upsidedown(str)
+
+Return a version of string `str` with upside down letters from the Unicode table.
+"""
 function upsidedown(str)
     asciistr = filter!(c -> haskey(upsidedowndict, c), split(str, ""))
     return join(map(c -> upsidedowndict[c], asciistr))
 end
 
+"""
+    fraktur(str)
+
+Return a version of string `str` with Fraktur letters from the Unicode table.
+"""
 function fraktur(str)
     asciistr = filter!(c -> haskey(frakturdict, c), split(str, ""))
     return join(map(c -> frakturdict[c], asciistr))
 end
 
+"""
+    upsidedown(str)
+
+Return a version of string `str` with script letters from the Unicode table.
+"""
 function script(str)
     asciistr = filter!(c -> haskey(scriptdict, c), split(str, ""))
     return join(map(c -> scriptdict[c], asciistr))

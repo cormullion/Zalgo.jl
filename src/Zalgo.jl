@@ -15,7 +15,7 @@ const downdc = vcat('\u0316':'\u0319', '\u031C':'\u0333',
     '\u034D':'\u034E', '\u0353':'\u0356', '\u0359',
     '\u035A', '\u035C', '\u035F','\u0362')
 
-const upsidedowndict = Dict("a" => "ɐ",
+const upsidedowndict = Dict{String, String}("a" => "ɐ",
     "b" => "q", "c" => "ɔ", "d" => "p", "e" => "ǝ", "f" => "ɟ", "g" => "ƃ",
     "h" => "ɥ", "i" => "ı", "j" => "ɾ", "k" => "ʞ", "l" => "ן", "m" => "ɯ",
     "n" => "u", "o" => "o", "p" => "d", "q" => "b", "r" => "ɹ", "s" => "s",

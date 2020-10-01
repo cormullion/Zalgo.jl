@@ -1,4 +1,11 @@
 # Zalgo
+Zalgo text aka glitchy text is a combination of multiple characters to each letter. In other words, one can easily generate Zalgo text by adding a specific mark to the letter or string.
+
+One can easily create a custom creepy or Halloween text style using the online Zalgo text generator here.
+
+### Zalgo Text
+
+Zalgo Text is a distorted version of the normal text that looks like a scary. These texts are portrayed as part of memes or images, some of which look nicely framed while some look very creepy. They certainly are grabbing a lot of attention in various media platforms like Facebook, Instagram, Twitter, etc. Many new versions of these texts are introduced every now and then. They are generally referred to as “Zalgo texts” or “Glitch Texts” due to their fleeting malfunction-like or messed-up appearance. Following are few examples of Zalgo Text.
 
 ```julia
 using Zalgo

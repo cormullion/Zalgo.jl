@@ -123,7 +123,7 @@ blackboarddict = Dict{String, Char}()
     '\U1D546',  # O
     '\u2119',   # P !
     '\u211a',   # Q !
-    '\u211c',   # R !
+    '\u211d',   # R
     '\U1D54A',  # S
     '\U1D54B',  # T
     '\U1D54C',  # U
@@ -131,7 +131,7 @@ blackboarddict = Dict{String, Char}()
     '\U1D54E',  # W
     '\U1D54f',  # X
     '\U1D550',  # Y
-    '\u2128'    # Z !
+    '\u2124'    # Z !
     )[i] for i = 1:26]
 [blackboarddict[string(Char(i + 96))] = vcat('\U1D552':'\U1D56B')[i] for i = 1:26]
 blackboarddict[" "] = ' '
@@ -142,6 +142,7 @@ scriptdict = Dict{String, Char}()
 [scriptdict[string(Char(i + 96))] = vcat('\U1D4b6':'\U1D4cf')[i] for i = 1:26]
 scriptdict["B"] = '\u212c'
 scriptdict["E"] = '\u2130'
+scriptdict["F"] = '\u2131'
 scriptdict["H"] = '\u210b'
 scriptdict["I"] = '\u2110'
 scriptdict["L"] = '\u2112'

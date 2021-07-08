@@ -3,10 +3,14 @@ using Zalgo
 using Test
 
 s = "Julia is really cool"
-
 @test length(zalgo(s)) > length(s)
 
-t = "this is text"
+@test (zalgo(s, upmarks=1:2) |> length > length(s)) == true
+@test (zalgo(s, middlemarks=1:2) |> length > length(s)) == true
+@test (zalgo(s, downmarks=1:2) |> length > length(s)) == true
+@test (zalgo(s, maxmarks=2) |> length > length(s)) == true
+
+@test length(zalgo(s, maxmarks=0)) == length(s)
 
 @test boldscript(string('B'))[1] |> Int  ==  120017
 @test boldfraktur(string('B'))[1] |> Int  ==  120173
@@ -22,7 +26,6 @@ t = "this is text"
 @test upsidedown(string('B'))[1] |> Int  ==  66578
 @test blackboard(string('B'))[1] |> Int  ==  120121
 @test fraktur(string('B'))[1] |> Int  ==  120069
-
 @test boldscript(string('w'))[1] |> Int  ==  120064
 @test boldfraktur(string('w'))[1] |> Int  ==  120220
 @test bolditalic(string('w'))[1] |> Int  ==  119960
@@ -37,8 +40,10 @@ t = "this is text"
 @test upsidedown(string('w'))[1] |> Int  ==  653
 @test blackboard(string('w'))[1] |> Int  ==  120168
 @test fraktur(string('w'))[1] |> Int  ==  120220
-
-
+@test boxed(string('w'))[1] |> Int == 127366
+@test circled(string('w'))[1] |> Int == 9446
+@test circled(string('w'), negative=true)[1] |> Int == 127366
+@test segmented(string('1'))[1] |> Int == 130032
 
 #=
 for f in (boldscript, boldfraktur, bolditalic, bolditalicsans, boldroman, boldsans, italic, italicsans, sans, script, teletype, upsidedown, blackboard, fraktur)

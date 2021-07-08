@@ -3,45 +3,34 @@ Zalgo.jl does two things.
 
 - It adds pointless diacritics to text: `zalgo("Cthulhu")`
 
-- It converts an input ASCII string to equivalent characters
-found in the darkest recesses of the Unicode charts:
+- It converts an input ASCII string to equivalent characters found in the darkest recesses of the Unicode charts:
 
 ```
-blackboard("Hello World") # "ℍ𝕖𝕝𝕝𝕠 𝕎𝕠𝕣𝕝𝕕"
-
-boldfraktur("Hello World") # "𝕳𝖊𝖑𝖑𝖔 𝖂𝖔𝖗𝖑𝖉"
-
-bolditalic("Hello World") # "𝑯𝒆𝒍𝒍𝒐 𝑾𝒐𝒓𝒍𝒅"
-
-bolditalicsans("Hello World") # "𝙃𝙚𝙡𝙡𝙤 𝙒𝙤𝙧𝙡𝙙"
-
-boldroman("Hello World") # "𝐇𝐞𝐥𝐥𝐨 𝐖𝐨𝐫𝐥𝐝"
-
-boldsans("Hello World") # "𝗛𝗲𝗹𝗹𝗼 𝗪𝗼𝗿𝗹𝗱"
-
-boldscript("Hello World") # "𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭"
-
-fraktur("Hello World") # "ℌ𝖊𝖑𝖑𝖔 𝔚𝖔𝖗𝖑𝖉"
-
-italic("Hello World") # "𝐻𝑒𝑙𝑙𝑜 𝑊𝑜𝑟𝑙𝑑"
-
-italicsans("Hello World") # "𝘏𝘦𝘭𝘭𝘰 𝘞𝘰𝘳𝘭𝘥"
-
-sans("Hello World") # "𝖧𝖾𝗅𝗅𝗈 𝖶𝗈𝗋𝗅𝖽"
-
-script("Hello World") # "ℋℯ𝓁𝓁ℴ 𝒲ℴ𝓇𝓁𝒹"
-
-teletype("Hello World") # "𝙷𝚎𝚕𝚕𝚘 𝚆𝚘𝚛𝚕𝚍"
-
-upsidedown("Hello World") # "Hǝןןo Moɹןp"
-
+blackboard("Hello World")              # "ℍ𝕖𝕝𝕝𝕠 𝕎𝕠𝕣𝕝𝕕"
+boldfraktur("Hello World")             # "𝕳𝖊𝖑𝖑𝖔 𝖂𝖔𝖗𝖑𝖉"
+bolditalic("Hello World")              # "𝑯𝒆𝒍𝒍𝒐 𝑾𝒐𝒓𝒍𝒅"
+bolditalicsans("Hello World")          # "𝙃𝙚𝙡𝙡𝙤 𝙒𝙤𝙧𝙡𝙙"
+boldroman("Hello World")               # "𝐇𝐞𝐥𝐥𝐨 𝐖𝐨𝐫𝐥𝐝"
+boldsans("Hello World")                # "𝗛𝗲𝗹𝗹𝗼 𝗪𝗼𝗿𝗹𝗱"
+boldscript("Hello World")              # "𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭"
+fraktur("Hello World")                 # "ℌ𝖊𝖑𝖑𝖔 𝔚𝖔𝖗𝖑𝖉"
+italic("Hello World")                  # "𝐻𝑒𝑙𝑙𝑜 𝑊𝑜𝑟𝑙𝑑"
+italicsans("Hello World")              # "𝘏𝘦𝘭𝘭𝘰 𝘞𝘰𝘳𝘭𝘥"
+sans("Hello World")                    # "𝖧𝖾𝗅𝗅𝗈 𝖶𝗈𝗋𝗅𝖽"
+script("Hello World")                  # "ℋℯ𝓁𝓁ℴ 𝒲ℴ𝓇𝓁𝒹"
+teletype("Hello World")                # "𝙷𝚎𝚕𝚕𝚘 𝚆𝚘𝚛𝚕𝚍"
+upsidedown("Hello World")              # "Hǝןןo Moɹןp"
+circled("HELLO WORLD")                 # "ⒽⒺⓁⓁⓄ ⓌⓄⓇⓁⒹ"
+boxed("hello world")                   # "🅷🅴🅻🅻🅾 🆆🅾🆁🅻🅳"
+segmented("0123456789"                 # "🯰🯱🯲🯰🯱🯲🯰🯱🯲"
 ```
 """
 module Zalgo
 
 export zalgo, boldfraktur, bolditalic, bolditalicsans,
 boldroman, boldsans, boldscript, fraktur, italic,
-italicsans, sans, script, teletype, upsidedown, blackboard
+italicsans, sans, script, teletype, upsidedown, blackboard,
+boxed, circled, segmented
 
 const updc = vcat('\u0300':'\u0315', '\u031A', '\u033D',
     '\u034A':'\u034C', '\u0350':'\u0352',
@@ -212,6 +201,33 @@ ttdict = Dict{String, Char}()
 [ttdict[string(Char(i + 64))] = vcat('\U1D670':'\U1D689')[i] for i = 1:26]
 [ttdict[string(Char(i + 96))] = vcat('\U1D68a':'\U1D6a3')[i] for i = 1:26]
 ttdict[" "] = ' '
+
+# build the boxed dict
+boxeddict = Dict{String, Char}()
+[boxeddict[string(Char(i + 64))] = vcat('\U1F130':'\U1F14A')[i] for i = 1:26]
+[boxeddict[string(Char(i + 96))] = vcat('\U1F170':'\U1F18A')[i] for i = 1:26]
+boxeddict[" "] = ' '
+
+# build the circled dict
+circleddict = Dict{String, Char}()
+[circleddict[string(Char(i + 64))] = vcat('\u24b6':'\u24cf')[i] for i = 1:26]
+[circleddict[string(Char(i + 96))] = vcat('\u24d0':'\u24e9')[i] for i = 1:26]
+[circleddict[string(Char(i + 0x30))] = vcat('\u2460':'\u2468')[i] for i = 1:9]
+# 24EA 0 CIRCLED DIGIT ZERO is separate
+circleddict[string(Char(0x30))] = '\u24ea'
+circleddict[" "] = ' '
+
+# negativecircled dict
+# build the circled dict
+negativecircleddict = Dict{String, Char}()
+[negativecircleddict[string(Char(i + 64))] = vcat('\U1F150':'\U1F169')[i] for i = 1:26]
+[negativecircleddict[string(Char(i + 96))] = vcat('\U1F170':'\U1F189')[i] for i = 1:26]
+negativecircleddict[" "] = ' '
+
+# build the segmented dict
+segmenteddict = Dict{String, Char}()
+[segmenteddict[string(Char(i + 0x30))] = vcat('\U1FBF0':'\U1FBF9')[i] for i = 1:9]
+segmenteddict[" "] = ' '
 
 function adddc(letter, dc)
     return string(letter) * string(dc[rand(1:end)])
@@ -400,11 +416,60 @@ end
 """
     blackboard(str)
 
-Return a version of string `str` with blackboard (monospaced) letters from the Unicode table.
+Return a version of string `str` with blackboard (double-struck) letters from the Unicode table.
 """
 function blackboard(str)
     asciistr = filter!(c -> haskey(blackboarddict, c), split(str, ""))
     return join(map(c -> blackboarddict[c], asciistr))
+end
+
+"""
+    boxed(str)
+
+Return a version of string `str` with boxed letters from the Unicode table.
+
+```
+boxed("A") -> "🄰"
+boxed("a") -> "🅰"
+```
+"""
+function boxed(str)
+    asciistr = filter!(c -> haskey(boxeddict, c), split(str, ""))
+    return join(map(c -> boxeddict[c], asciistr))
+end
+
+"""
+    circled(str)
+
+Return a version of string `str` with circled/boxed letters from the Unicode table.
+
+```
+A-Z             \u24b6:\u24cf       "A" -> "Ⓐ"
+a-z             \u24d0:\u24e9       "a" -> "ⓐ"
+0-9             \u2460:\u2468       "0" -> "⓪"
+A-Z negative    \U1F150:\U1F169     "A" -> "🅐"
+a-z negative    \U1F170:\U1F189     "a" -> "🅰"
+```
+"""
+function circled(str;
+        negative=false)
+    if negative
+        asciistr = filter!(c -> haskey(negativecircleddict, c), split(str, ""))
+        return join(map(c -> negativecircleddict[c], asciistr))
+    else
+        asciistr = filter!(c -> haskey(circleddict, c), split(str, ""))
+        return join(map(c -> circleddict[c], asciistr))
+    end
+end
+
+"""
+    segmented(str)
+
+Return a version of string `str` with LED-style digits from the Unicode table.
+"""
+function segmented(str)
+    asciistr = filter!(c -> haskey(segmenteddict, c), split(str, ""))
+    return join(map(c -> segmenteddict[c], asciistr))
 end
 
 end # module

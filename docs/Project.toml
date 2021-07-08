@@ -1,0 +1,14 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+Luxor = "ae8d54c2-7ccd-5906-9d76-62fc9837b5bc"
+
+[compat]
+julia = "1"
+Documenter = "0.27"
+Luxor = "2"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

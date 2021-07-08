@@ -7,7 +7,6 @@ zalgo("Julia approaches")
 "J̳̋ͪ︡ų̔l̲̮̲̏̆͋i͖͈̬̭ͭ̄a̬ͯ a̖̖̝ͬͨ͢p̘͓̣̄̕p̯ͥ̍͘r̯ͧ̄o̘̖̮͌̚ã͔̍ͣc̗ͪh̨͗︢e̚s̡̡︡ͮ͐"
 ```
 
-
 ```julia
 zalgo("""
 Zalgo is an Internet legend about an ominous entity believed to
@@ -32,40 +31,7 @@ I̜̙̅͡t͔͎͒ h̨̻͑͛a̺͌͊̕s̻̰ͩ̓̇ ň͓ͣ͌o͉t̝̽ͦh̠̦͕ͫͥi͚
 
 """
 
-Zalgo.jl also converts an input string to equivalent characters found
-in the darkest recesses of the Unicode charts:
-
-```
-blackboard("Hello World") # "ℍ𝕖𝕝𝕝𝕠 𝕎𝕠𝕣𝕝𝕕"
-
-boldfraktur("Hello World") # "𝕳𝖊𝖑𝖑𝖔 𝖂𝖔𝖗𝖑𝖉"
-
-bolditalic("Hello World") # "𝑯𝒆𝒍𝒍𝒐 𝑾𝒐𝒓𝒍𝒅"
-
-bolditalicsans("Hello World") # "𝙃𝙚𝙡𝙡𝙤 𝙒𝙤𝙧𝙡𝙙"
-
-boldroman("Hello World") # "𝐇𝐞𝐥𝐥𝐨 𝐖𝐨𝐫𝐥𝐝"
-
-boldsans("Hello World") # "𝗛𝗲𝗹𝗹𝗼 𝗪𝗼𝗿𝗹𝗱"
-
-boldscript("Hello World") # "𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭"
-
-fraktur("Hello World") # "ℌ𝖊𝖑𝖑𝖔 𝔚𝖔𝖗𝖑𝖉"
-
-italic("Hello World") # "𝐻𝑒𝑙𝑙𝑜 𝑊𝑜𝑟𝑙𝑑"
-
-italicsans("Hello World") # "𝘏𝘦𝘭𝘭𝘰 𝘞𝘰𝘳𝘭𝘥"
-
-sans("Hello World") # "𝖧𝖾𝗅𝗅𝗈 𝖶𝗈𝗋𝗅𝖽"
-
-script("Hello World") # "ℋℯ𝓁𝓁ℴ 𝒲ℴ𝓇𝓁𝒹"
-
-teletype("Hello World") # "𝙷𝚎𝚕𝚕𝚘 𝚆𝚘𝚛𝚕𝚍"
-
-upsidedown("Hello World") # "Hǝןןo Moɹןp"
-
-```
-"""
+Because this is pretty useless, this package provides some other more useful functions for converting text.
 
 [![Build Status](https://travis-ci.com/cormullion/Zalgo.jl.svg?branch=master)](https://travis-ci.com/cormullion/Zalgo.jl)
 

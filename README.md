@@ -1,5 +1,11 @@
 # Zalgo
 
+| **Documentation**                       | **Build Status**                           | **Code Coverage**               |
+|:--------------------------------------- |:-------------------------------------------|:-------------------------------:|
+| [![][docs-stable-img]][docs-stable-url] | [![Build Status][ci-img]][ci-url]          | [![][codecov-img]][codecov-url] |
+| [![][docs-latest-img]][docs-latest-url] | [![][appveyor-img]][appveyor-url]          |                                 |
+
+
 ```julia
 using Zalgo
 zalgo("Julia approaches")
@@ -38,3 +44,21 @@ Because this is pretty useless, this package provides some other more useful fun
 [![Coverage Status](https://coveralls.io/repos/cormullion/Zalgo.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/cormullion/Zalgo.jl?branch=master)
 
 [![codecov.io](http://codecov.io/github/cormullion/Zalgo.jl/coverage.svg?branch=master)](http://codecov.io/github/cormullion/Zalgo.jl?branch=master)
+
+[docs-stable-img]: https://img.shields.io/badge/docs-stable%20release-blue.svg
+[docs-stable-url]: https://cormullion.github.io/Zalgo.jl/stable/
+
+[docs-latest-img]: https://img.shields.io/badge/docs-in_development-orange.svg
+[docs-latest-url]: https://cormullion.github.io/ColorSchemes.jl/latest/
+
+[travis-img]: https://travis-ci.com/cormullion/zalgo.jl.svg?branch=master
+[travis-url]: https://travis-ci.com/cormullion/zalgo.jl
+
+[appveyor-img]: https://ci.appveyor.com/api/projects/status/59hherf65c713iaw/branch/master?svg=true
+[appveyor-url]: https://ci.appveyor.com/project/cormullion/colorschemetools-jl
+
+[codecov-img]: https://codecov.io/gh/cormullion/zalgo.jl/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/cormullion/zalgo.jl
+
+[ci-img]: https://github.com/cormullion/zalgo.jl/workflows/CI/badge.svg
+[ci-url]: https://github.com/cormullion/zalgo.jl/actions?query=workflow%3ACI

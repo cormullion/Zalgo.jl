@@ -10,19 +10,18 @@ Use the `zalgo` function to add diacritics to a string. The options let you cont
 
 ```@example
 using Zalgo
-  zalgo("Julia is cool")
-end
+zalgo("Julia is cool")
 ```
 
 Results vary considerably from font to font.
 
 ## Utilities
 
-Because this package is useless - and occasionally bad, because it can cause some applicatipns to misbehave (it can crash Atom, for example) - this package also provides some conversions.
+Because this package is useless - and occasionally bad, because it can cause some applicatipns to misbehave (it can crash Atom, for example) - this package also provides some conversions to justify its existence.
 
-The following functions convert the input string to equivalent characters that are to be found in the darkest recesses of the Unicode charts. Of course, the characters aren't always available in all fonts.
+The following functions convert the input string to equivalent characters that are to be found in the darkest recesses of the Unicode charts. Of course, the characters aren’t always available in all fonts.
 
-```@setup e_xample
+```@setup graphic
 using Luxor, Zalgo
 svg = @drawsvg begin
   fontface("JuliaMono")
@@ -61,7 +60,7 @@ svg = @drawsvg begin
 end
 ```
 
-```@example e_xample
+```@example graphic
 using Luxor, Zalgo # hide
 svg # hide
 ```

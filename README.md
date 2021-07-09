@@ -49,7 +49,7 @@ Because this is pretty useless, this package provides some other more useful fun
 [docs-stable-url]: https://cormullion.github.io/Zalgo.jl/stable/
 
 [docs-latest-img]: https://img.shields.io/badge/docs-in_development-orange.svg
-[docs-latest-url]: https://cormullion.github.io/Zalgo.jl/latest/
+[docs-latest-url]: https://cormullion.github.io/Zalgo.jl/dev/
 
 [travis-img]: https://travis-ci.com/cormullion/Zalgo.jl.svg?branch=master
 [travis-url]: https://travis-ci.com/cormullion/Zalgo.jl

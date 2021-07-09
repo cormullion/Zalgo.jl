@@ -49,13 +49,13 @@ Because this is pretty useless, this package provides some other more useful fun
 [docs-stable-url]: https://cormullion.github.io/Zalgo.jl/stable/
 
 [docs-latest-img]: https://img.shields.io/badge/docs-in_development-orange.svg
-[docs-latest-url]: https://cormullion.github.io/ColorSchemes.jl/latest/
+[docs-latest-url]: https://cormullion.github.io/Zalgo.jl/latest/
 
-[travis-img]: https://travis-ci.com/cormullion/zalgo.jl.svg?branch=master
-[travis-url]: https://travis-ci.com/cormullion/zalgo.jl
+[travis-img]: https://travis-ci.com/cormullion/Zalgo.jl.svg?branch=master
+[travis-url]: https://travis-ci.com/cormullion/Zalgo.jl
 
 [appveyor-img]: https://ci.appveyor.com/api/projects/status/59hherf65c713iaw/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/cormullion/colorschemetools-jl
+[appveyor-url]: https://ci.appveyor.com/project/cormullion/zalgo-jl
 
 [codecov-img]: https://codecov.io/gh/cormullion/zalgo.jl/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/cormullion/zalgo.jl

@@ -43,7 +43,8 @@ s = "Julia is really cool"
 @test boxed(string('w'))[1] |> Int == 127366
 @test circled(string('w'))[1] |> Int == 9446
 @test circled(string('w'), negative=true)[1] |> Int == 127366
-@test segmented(string('1'))[1] |> Int == 130032
+@test segmented(string('1'))[1] |> Int == 130033
+@test segmented(string('0'))[1] |> Int == 130032
 
 #=
 for f in (boldscript, boldfraktur, bolditalic, bolditalicsans, boldroman, boldsans, italic, italicsans, sans, script, teletype, upsidedown, blackboard, fraktur)

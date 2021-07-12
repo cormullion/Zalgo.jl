@@ -22,7 +22,7 @@ teletype("Hello World")                # "𝙷𝚎𝚕𝚕𝚘 𝚆𝚘𝚛𝚕�
 upsidedown("Hello World")              # "Hǝןןo Moɹןp"
 circled("HELLO WORLD")                 # "ⒽⒺⓁⓁⓄ ⓌⓄⓇⓁⒹ"
 boxed("hello world")                   # "🅷🅴🅻🅻🅾 🆆🅾🆁🅻🅳"
-segmented("0123456789"                 # "🯰🯱🯲🯰🯱🯲🯰🯱🯲"
+segmented("0123456789")                # "🯰🯱🯲🯰🯱🯲🯰🯱🯲"
 ```
 """
 module Zalgo
@@ -226,7 +226,7 @@ negativecircleddict[" "] = ' '
 
 # build the segmented dict
 segmenteddict = Dict{String, Char}()
-[segmenteddict[string(Char(i + 0x30))] = vcat('\U1FBF0':'\U1FBF9')[i] for i = 1:9]
+[segmenteddict[string(Char(i + 0x2f))] = vcat('\U1FBF0':'\U1FBF9')[i] for i = 1:10]
 segmenteddict[" "] = ' '
 
 function adddc(letter, dc)

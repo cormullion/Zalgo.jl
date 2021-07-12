@@ -39,16 +39,10 @@ I̜̙̅͡t͔͎͒ h̨̻͑͛a̺͌͊̕s̻̰ͩ̓̇ ň͓ͣ͌o͉t̝̽ͦh̠̦͕ͫͥi͚
 
 Because this is pretty useless, this package provides some other more useful functions for converting text.
 
-[![Build Status](https://travis-ci.com/cormullion/Zalgo.jl.svg?branch=master)](https://travis-ci.com/cormullion/Zalgo.jl)
-
-[![Coverage Status](https://coveralls.io/repos/cormullion/Zalgo.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/cormullion/Zalgo.jl?branch=master)
-
-[![codecov.io](http://codecov.io/github/cormullion/Zalgo.jl/coverage.svg?branch=master)](http://codecov.io/github/cormullion/Zalgo.jl?branch=master)
-
 [docs-stable-img]: https://img.shields.io/badge/docs-stable%20release-blue.svg
-[docs-stable-url]: https://cormullion.github.io/Zalgo.jl/stable/
+[docs-stable-url]: https://cormullion.github.io/Zalgo.jl/dev/
 
-[docs-latest-img]: https://img.shields.io/badge/docs-in_development-orange.svg
+[docs-latest-img]: https://img.shields.io/badge/docs-current-master-orange.svg
 [docs-latest-url]: https://cormullion.github.io/Zalgo.jl/dev/
 
 [travis-img]: https://travis-ci.com/cormullion/Zalgo.jl.svg?branch=master

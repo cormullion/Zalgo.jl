@@ -92,7 +92,7 @@ frakturdict = Dict{String, Char}()
 [frakturdict[string(Char(i + 96))] = vcat('\U1D586':'\U1D59F')[i] for i = 1:26]
 frakturdict[" "] = ' '
 
-# build the blackboard dict
+# build the blackboard (double-struck) dict
 blackboarddict = Dict{String, Char}()
 [blackboarddict[string(Char(i + 64))] = vcat(
     '\U1D538',  # A
@@ -123,6 +123,9 @@ blackboarddict = Dict{String, Char}()
     '\u2124'    # Z !
     )[i] for i = 1:26]
 [blackboarddict[string(Char(i + 96))] = vcat('\U1D552':'\U1D56B')[i] for i = 1:26]
+# digits
+[blackboarddict[string(Char(i + 48))] =  vcat('\U1D7D8':'\U1D7E1')[i + 1] for i in 0:9]
+
 blackboarddict[" "] = ' '
 
 # build the Script dict
@@ -146,6 +149,7 @@ scriptdict[" "] = ' '
 boldromandict = Dict{String, Char}()
 [boldromandict[string(Char(i + 64))] = vcat('\U1D400':'\U1D419')[i] for i = 1:26]
 [boldromandict[string(Char(i + 96))] = vcat('\U1D41a':'\U1D433')[i] for i = 1:26]
+[boldromandict[string(Char(i + 48))] = vcat('\U1D7CE':'\U1D7D7')[i + 1] for i = 0:9]
 boldromandict[" "] = ' '
 
 # build the italic dict
@@ -176,12 +180,14 @@ boldfrakturdict[" "] = ' '
 sansdict = Dict{String, Char}()
 [sansdict[string(Char(i + 64))] = vcat('\U1D5A0':'\U1D5B9')[i] for i = 1:26]
 [sansdict[string(Char(i + 96))] = vcat('\U1D5ba':'\U1D5d3')[i] for i = 1:26]
+[sansdict[string(Char(i + 48))] = vcat('\U1D7E2':'\U1D7EB')[i + 1] for i = 0:9]
 sansdict[" "] = ' '
 
 # build the boldsans dict
 boldsansdict = Dict{String, Char}()
 [boldsansdict[string(Char(i + 64))] = vcat('\U1D5d4':'\U1D5ed')[i] for i = 1:26]
 [boldsansdict[string(Char(i + 96))] = vcat('\U1D5ee':'\U1D607')[i] for i = 1:26]
+[boldsansdict[string(Char(i + 48))] = vcat('\U1D7EC':'\U1D7F5')[i + 1] for i = 0:9]
 boldsansdict[" "] = ' '
 
 # build the italicsans dict
@@ -200,6 +206,7 @@ bolditalicsansdict[" "] = ' '
 ttdict = Dict{String, Char}()
 [ttdict[string(Char(i + 64))] = vcat('\U1D670':'\U1D689')[i] for i = 1:26]
 [ttdict[string(Char(i + 96))] = vcat('\U1D68a':'\U1D6a3')[i] for i = 1:26]
+[ttdict[string(Char(i + 48))] = vcat('\U1D7F6':'\U1D7FF')[i + 1] for i = 0:9]
 ttdict[" "] = ' '
 
 # build the boxed dict
@@ -213,7 +220,7 @@ circleddict = Dict{String, Char}()
 [circleddict[string(Char(i + 64))] = vcat('\u24b6':'\u24cf')[i] for i = 1:26]
 [circleddict[string(Char(i + 96))] = vcat('\u24d0':'\u24e9')[i] for i = 1:26]
 [circleddict[string(Char(i + 0x30))] = vcat('\u2460':'\u2468')[i] for i = 1:9]
-# 24EA 0 CIRCLED DIGIT ZERO is separate
+# 24EA 0 CIRCLED DIGIT ZERO is separate !!!
 circleddict[string(Char(0x30))] = '\u24ea'
 circleddict[" "] = ' '
 

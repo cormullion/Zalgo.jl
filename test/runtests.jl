@@ -45,8 +45,11 @@ s = "Julia is really cool"
 @test circled(string('w'), negative=true)[1] |> Int == 127366
 @test segmented(string('1'))[1] |> Int == 130033
 @test segmented(string('0'))[1] |> Int == 130032
+@test length(blackboard("Figure 2")) == 8
+@test length(blackboard("Figure 22")) == 9
 
 #=
+# build
 for f in (boldscript, boldfraktur, bolditalic, bolditalicsans, boldroman, boldsans, italic, italicsans, sans, script, teletype, upsidedown, blackboard, fraktur)
     ch = 'w'
     ff = f(string(ch))

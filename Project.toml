@@ -1,7 +1,7 @@
 name = "Zalgo"
 uuid = "5b351978-c8a9-11e9-2467-a1bfb30aea0b"
 authors = ["cormullion <cormullion@mac.com>"]
-version = "1.1.0"
+version = "1.2.0"
 
 [deps]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

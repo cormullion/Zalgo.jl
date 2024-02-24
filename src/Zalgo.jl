@@ -3,34 +3,40 @@ Zalgo.jl does two things.
 
 - It adds pointless diacritics to text: `zalgo("Cthulhu")`
 
-- It converts an input ASCII string to equivalent characters found in the darkest recesses of the Unicode charts:
+- It converts an input ASCII string to equivalent characters found in the 
+darkest recesses of the Unicode charts:
 
 ```
-blackboard("Hello World")              # "ℍ𝕖𝕝𝕝𝕠 𝕎𝕠𝕣𝕝𝕕"
-boldfraktur("Hello World")             # "𝕳𝖊𝖑𝖑𝖔 𝖂𝖔𝖗𝖑𝖉"
-bolditalic("Hello World")              # "𝑯𝒆𝒍𝒍𝒐 𝑾𝒐𝒓𝒍𝒅"
-bolditalicsans("Hello World")          # "𝙃𝙚𝙡𝙡𝙤 𝙒𝙤𝙧𝙡𝙙"
-boldroman("Hello World")               # "𝐇𝐞𝐥𝐥𝐨 𝐖𝐨𝐫𝐥𝐝"
-boldsans("Hello World")                # "𝗛𝗲𝗹𝗹𝗼 𝗪𝗼𝗿𝗹𝗱"
-boldscript("Hello World")              # "𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭"
-fraktur("Hello World")                 # "ℌ𝖊𝖑𝖑𝖔 𝔚𝖔𝖗𝖑𝖉"
-italic("Hello World")                  # "𝐻𝑒𝑙𝑙𝑜 𝑊𝑜𝑟𝑙𝑑"
-italicsans("Hello World")              # "𝘏𝘦𝘭𝘭𝘰 𝘞𝘰𝘳𝘭𝘥"
-sans("Hello World")                    # "𝖧𝖾𝗅𝗅𝗈 𝖶𝗈𝗋𝗅𝖽"
-script("Hello World")                  # "ℋℯ𝓁𝓁ℴ 𝒲ℴ𝓇𝓁𝒹"
-teletype("Hello World")                # "𝙷𝚎𝚕𝚕𝚘 𝚆𝚘𝚛𝚕𝚍"
-upsidedown("Hello World")              # "Hǝןןo Moɹןp"
-circled("HELLO WORLD")                 # "ⒽⒺⓁⓁⓄ ⓌⓄⓇⓁⒹ"
-boxed("hello world")                   # "🅷🅴🅻🅻🅾 🆆🅾🆁🅻🅳"
-segmented("0123456789")                # "🯰🯱🯲🯰🯱🯲🯰🯱🯲"
+blackboard("Hello World")    
+boldfraktur("Hello World")   
+bolditalic("Hello World")    
+bolditalicsans("Hello World")
+boldroman("Hello World")     
+boldsans("Hello World")      
+boldscript("Hello World")    
+boxed("hello world")         
+circled("HELLO WORLD")       
+fraktur("Hello World")       
+italic("Hello World")        
+italicsans("Hello World")    
+sans("Hello World")          
+script("Hello World")        
+segmented("0123456789")      
+teletype("Hello World")      
+upsidedown("Hello World")    
 ```
+
+```large_type("Hello World")``` displays the text using
+the Large Text glyphs defined in Unicode 16.
 """
 module Zalgo
 
 export zalgo, boldfraktur, bolditalic, bolditalicsans,
 boldroman, boldsans, boldscript, fraktur, italic,
 italicsans, sans, script, teletype, upsidedown, blackboard,
-boxed, circled, segmented
+boxed, circled, segmented, large_type
+
+include("largetype.jl")
 
 const updc = vcat('\u0300':'\u0315', '\u031A', '\u033D',
     '\u034A':'\u034C', '\u0350':'\u0352',

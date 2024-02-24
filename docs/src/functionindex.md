@@ -1,4 +1,5 @@
 # Index
 
-```@index
+```@autodocs
+Modules = [Zalgo]
 ```

@@ -48,6 +48,8 @@ s = "Julia is really cool"
 @test length(blackboard("Figure 2")) == 8
 @test length(blackboard("Figure 22")) == 9
 
+@test length(large_type("ABC").glyphs) == 3
+
 #=
 # build
 for f in (boldscript, boldfraktur, bolditalic, bolditalicsans, boldroman, boldsans, italic, italicsans, sans, script, teletype, upsidedown, blackboard, fraktur)

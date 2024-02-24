@@ -1,10 +1,13 @@
-using Documenter, Zalgo, Luxor
+using Documenter, Zalgo
 
 makedocs(
     modules = [Zalgo],
     sitename = "Zalgo",
+    warnonly = true,
     format = Documenter.HTML(
         prettyurls = get(ENV, "CI", nothing) == "true",
+        size_threshold=nothing,
+        collapselevel=1,
         assets = [
             ]),
     pages = Any[
@@ -15,5 +18,7 @@ makedocs(
 
 deploydocs(
     repo = "github.com/cormullion/Zalgo.jl.git",
-    target = "build"
+    target = "build",
+    push_preview=true,
+    forcepush=true
 )

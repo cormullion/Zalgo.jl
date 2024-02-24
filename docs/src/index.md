@@ -25,4 +25,4 @@ The following functions convert the input string to equivalent characters that a
 
 ![example](assets/example.svg)
 
-Of course, not all these characters will be available in the current font.
+The current font should contain the various Unicode glyphs.

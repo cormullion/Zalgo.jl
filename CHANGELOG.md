@@ -6,7 +6,7 @@
 
 - large type
 
-- roundhand script
+- roundhand script option
 
 ## Changed
 

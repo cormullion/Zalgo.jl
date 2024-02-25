@@ -1,3 +1,5 @@
+![luxor splash image](docs/src/assets/zalgo-social-media-preview.png)
+
 # Zalgo
 
 | **Documentation**                       | **Build Status**                           | **Code Coverage**               |

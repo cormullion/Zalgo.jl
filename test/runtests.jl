@@ -48,6 +48,13 @@ s = "Julia is really cool"
 @test length(blackboard("Figure 2")) == 8
 @test length(blackboard("Figure 22")) == 9
 
+# two script styles
+sc1 = collect(script("Good Morning Sir", roundhand=false))
+sc2 = collect(script("Good Morning Sir", roundhand=true))
+
+# they'll only differ by one: sc2 has a VS2 (U+FE01) after every glyph
+@test length(setdiff(sc2, sc1) == 1)
+
 @test length(large_type("ABC").glyphs) == 3
 
 #=

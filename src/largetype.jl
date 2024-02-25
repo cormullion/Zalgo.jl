@@ -1,3 +1,6 @@
+# thanks to Philippe Majerus https://github.com/PhMajerus for documenting these
+# in some detail
+
 """
 A single "LargeType" glyph, using the system of pieces defined in Unicode version 16.
 Each glyph is made up of nine pieces, each in the range U1CE1A to U1CE50.
@@ -15,16 +18,19 @@ struct LargeTypeChar
 end
 
 """
-a sequence of large type glyphs
+A sequence of LargeType glyphs
 """
 struct LargeTypeString
     glyphs::Array{LargeTypeChar,1}
 end
 
 """
-make a LargeType glyph from a string
+Construct a LargeType glyph from a string.
 """
 function _buildLargeTypeChar(str)
+    if length(str) != 9
+        throw(error("_buildLargeTypeChar: exactly nine characters required - $(str) is $(length(str))"))
+    end 
     return LargeTypeChar([Char(e) for e in str]...)
 end
 

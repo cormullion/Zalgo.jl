@@ -8,8 +8,8 @@ makedocs(
         prettyurls = get(ENV, "CI", nothing) == "true",
         size_threshold=nothing,
         collapselevel=1,
-        assets = [
-            ]),
+        assets = ["assets/zalgo-docs.css"]
+    ),
     pages = Any[
         "Introduction"  => "index.md",
         "Index"         => "functionindex.md"
